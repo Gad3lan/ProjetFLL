@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -50,6 +52,15 @@ public class Player : MonoBehaviour
             barreDeVie.gameObject.transform.Find("Fill Area").Find("Fill").GetComponent<Image>().color =
                 gradient.Evaluate(1f * vieActueille / vie);
         }
+    }
+
+    private void Awake()
+    {
+        string path = "Assets/test.txt";
+        StreamReader reader = new StreamReader(path);
+        int niveau = int.Parse(reader.ReadLine() ?? "1");
+        vie = int.Parse(reader.ReadLine() ?? "20");
+        String classeJoueur = reader.ReadLine() ?? ""; // Trouver un moyen de recuperer un enum
     }
 
     // Start is called before the first frame update

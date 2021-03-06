@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class Enemie : MonoBehaviour
 {
@@ -38,7 +41,12 @@ public class Enemie : MonoBehaviour
         Debug.Log(degats);
         player.subitDegats(degats);
     }
-    
+
+    private void Awake()
+    {
+        Debug.Log(PlayerPrefs.GetString("nomEnnemi") + ": " + PlayerPrefs.GetInt("niveauEnnemi"));
+    }
+
     // Start is called before the first frame update
     void Start()
     {

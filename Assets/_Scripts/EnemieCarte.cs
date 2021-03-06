@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +20,9 @@ public class EnemieCarte : MonoBehaviour
 
     void OnMouseDown()
     {
+        PlayerPrefs.SetString("nomEnnemi", "test");
+        PlayerPrefs.SetInt("niveauEnnemi", 42);
+        
         SceneManager.LoadScene("Combat");
     }
 }
