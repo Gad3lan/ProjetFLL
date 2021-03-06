@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [Serializable]
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         {
             Destroy(barreDeVie.gameObject);
             Destroy(this.gameObject);
+            SceneManager.LoadScene("Carte");
         }
         else
         {
