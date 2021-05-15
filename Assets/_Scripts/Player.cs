@@ -61,9 +61,9 @@ public class Player : MonoBehaviour
         int niveau = int.Parse(reader.ReadLine() ?? "1");
         vie = int.Parse(reader.ReadLine() ?? "20");
         String classeJoueur = reader.ReadLine() ?? ""; // Trouver un moyen de recuperer un enum
+        reader.Close();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         vieActueille = vie;
@@ -83,11 +83,5 @@ public class Player : MonoBehaviour
                 enemie.subitDegats(attack.degat);
             });
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
